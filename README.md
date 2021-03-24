@@ -2,6 +2,8 @@
 
 > 제가 제출해서 정답을 받은 모든 풀이를 보관하려고 합니다.
 
+> `C++` 을 사용하였습니다.
+
 - [프로그래머스](https://programmers.co.kr/)
 - [백준 온라인](https://www.acmicpc.net/) 
 - [코드업](https://codeup.kr/index.php)
