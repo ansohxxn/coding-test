@@ -37,9 +37,7 @@ vector<vector<Pos>> Categorize(vector<vector<int>> board) {
     for (int i = 0; i < allCard.size(); ++i) {
         vector<bool> v(allCard[i].size());
         singleCard_visited[i] = v;
-    }
-        
-                
+    }       
     return allCard;
 }
 
