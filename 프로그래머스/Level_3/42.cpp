@@ -18,7 +18,6 @@ int dirC[] = { 1, -1, 0, 0 };
 vector<vector<Pos>> allCard(7);
 vector<bool> numOfCard_visited(7);
 vector<vector<bool>> singleCard_visited(7);
-vector<Pos> perm; // 없애기
 
 void SmallDFS(vector<vector<int>> board, vector<Pos> sameCards, int cardNum, Pos card, int dist, int small_depth, int big_depth);
 
@@ -37,7 +36,9 @@ vector<vector<Pos>> Categorize(vector<vector<int>> board) {
     for (int i = 0; i < allCard.size(); ++i) {
         vector<bool> v(allCard[i].size());
         singleCard_visited[i] = v;
-    }       
+    }
+        
+                
     return allCard;
 }
 
@@ -136,9 +137,7 @@ void SmallDFS(vector<vector<int>> board, vector<Pos> sameCards, int cardNum, Pos
             Pos nextCard{ sameCards[i].r, sameCards[i].c };
             int newDist = dist + BFS(board, card, nextCard);
             board[sameCards[i].r][sameCards[i].c] = 0;
-            perm.push_back(nextCard);
             SmallDFS(board, sameCards, cardNum, nextCard, newDist, small_depth + 1, big_depth);
-            perm.pop_back();
             board[sameCards[i].r][sameCards[i].c] = cardNum;
             singleCard_visited[cardNum][i] = false;
         }
@@ -150,7 +149,6 @@ int solution(vector<vector<int>> board, int r, int c) {
     n = 0;
     allCard = Categorize(board);
     Pos start{ r, c };
-    perm.push_back(start);
     BigDFS(board, start, 0, 0, 0);
     return answer;
 }
