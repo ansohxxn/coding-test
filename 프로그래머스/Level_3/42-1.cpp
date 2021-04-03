@@ -18,6 +18,7 @@ vector<bool> numOfCard_visited(7);
 vector<vector<bool>> singleCard_visited(7);
 
 void SmallDFS(vector<vector<int>> board, vector<Pos> sameCards, int cardNum, Pos card, int dist, int small_depth, int big_depth);
+int BFS(vector<vector<int>> board, Pos startCard, Pos destCard);
 
 vector<vector<Pos>> Categorize(vector<vector<int>> board) {
     vector<vector<Pos>> allCard(7);
