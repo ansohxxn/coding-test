@@ -20,8 +20,7 @@ vector<vector<bool>> singleCard_visited(7);
 void SmallDFS(vector<vector<int>> board, vector<Pos> sameCards, int cardNum, Pos card, int dist, int small_depth, int big_depth);
 int BFS(vector<vector<int>> board, Pos startCard, Pos destCard);
 
-vector<vector<Pos>> Categorize(vector<vector<int>> board) {
-    vector<vector<Pos>> allCard(7);
+void Categorize(vector<vector<int>> board) {
     for (int i = 0; i < board.size(); ++i) {
         for (int j = 0; j < board[i].size(); ++j) {
             if (board[i][j] != 0) {
@@ -36,9 +35,6 @@ vector<vector<Pos>> Categorize(vector<vector<int>> board) {
         vector<bool> v(allCard[i].size());
         singleCard_visited[i] = v;
     }
-        
-                
-    return allCard;
 }
 
 int BFS(vector<vector<int>> board, Pos startCard, Pos destCard) {
@@ -146,7 +142,7 @@ void SmallDFS(vector<vector<int>> board, vector<Pos> sameCards, int cardNum, Pos
 int solution(vector<vector<int>> board, int r, int c) {
     answer = INF;
     n = 0;
-    allCard = Categorize(board);
+    Categorize(board);
     Pos start{ r, c };
     BigDFS(board, start, 0, 0, 0);
     return answer;
