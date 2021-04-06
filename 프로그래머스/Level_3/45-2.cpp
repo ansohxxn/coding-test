@@ -8,7 +8,6 @@ using namespace std;
 struct Pos {
     int r;
     int c;
-    int turn_count;
     int dir;
 };
 
@@ -26,8 +25,6 @@ map<char, Pos> pos_record;
 Pos BFS(Pos start, char start_alpha) {
     queue<Pos> q;
     vector<vector<int>> turn_and_check(M, vector<int>(N, INF));
-
-    start.turn_count = 0;
     start.dir = -1;
     q.push(start);
     turn_and_check[start.r][start.c] = 0;
@@ -45,7 +42,7 @@ Pos BFS(Pos start, char start_alpha) {
             int nextR = now.r + dr[i];
             int nextC = now.c + dc[i];
             int nextDir = i;
-            int next_turn_count = now.turn_count;
+            int next_turn_count = turn_and_check[now.r][now.c];
             if (now.dir != -1 && now.dir != nextDir)
                 next_turn_count++;
 
@@ -56,7 +53,7 @@ Pos BFS(Pos start, char start_alpha) {
             if (Board[nextR][nextC] != '.' && Board[nextR][nextC] != start_alpha)
                 continue;
             if (turn_and_check[nextR][nextC] >= next_turn_count) {
-                q.push({ nextR, nextC, next_turn_count, nextDir });
+                q.push({ nextR, nextC, nextDir });
                 turn_and_check[nextR][nextC] = next_turn_count;
             }
         }
