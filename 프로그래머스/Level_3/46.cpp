@@ -17,14 +17,15 @@ int solution(int n, int m, vector<vector<int>> edge_list, int k, vector<int> gps
     dp[0][gps_log[0]] = 0;
     for (int t = 1; t < k; ++t) {
         for (int pos = 1; pos <= n; ++pos) {
-            
+
+            int minValue = dp[t][pos];
             for (int i = 0; i < road[pos].size(); ++i)
-                dp[t][pos] = min(dp[t - 1][road[pos][i]], dp[t][pos]);
+                minValue = min(dp[t - 1][road[pos][i]], minValue);
             
-            dp[t][pos] = min(dp[t - 1][pos], dp[t][pos]);
-            
-            if (gps_log[t] != pos)
-                dp[t][pos] += 1;
+            if (gps_log[t] != pos) 
+                dp[t][pos] = minValue + 1;
+            else 
+                dp[t][pos] = minValue;
         }
     }
 
