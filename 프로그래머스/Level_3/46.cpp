@@ -18,7 +18,7 @@ int solution(int n, int m, vector<vector<int>> edge_list, int k, vector<int> gps
     for (int t = 1; t < k; ++t) {
         for (int pos = 1; pos <= n; ++pos) {
 
-            int minValue = INF;
+            int minValue = dp[t - 1][pos];
             for (int i = 0; i < road[pos].size(); ++i)
                 minValue = min(dp[t - 1][road[pos][i]], minValue);
             
