@@ -143,6 +143,7 @@ string solution(string sentence) {
                     }
                     else {
                         first_rule = false;
+                        char_rule1 = NULL;
                         words.push_back(word);
                         word = "";
                     }
