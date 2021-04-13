@@ -17,11 +17,6 @@ int solution(vector<int> food_times, long long k) {
     }
 
     long long sum = 0;
-    for (int i = 0; i < n; ++i)
-        sum += food_times[i];
-    if (sum <= k) return -1;
-
-    sum = 0;
     long long temp_n = n;
     long long now, prev = 0;
     for (auto& d : kind) {
@@ -33,7 +28,8 @@ int solution(vector<int> food_times, long long k) {
         temp_n -= freq[d];
         prev = now;
     }
-
+    if (temp_n == 0) return -1;
+    
     long long offset = k - sum;
     vector<pair<int, int>> notzero;
     for (int i = 0; i < n; ++i)
