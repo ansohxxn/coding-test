@@ -15,7 +15,7 @@
 
 ## 📌 백준 
 
-![Solved.ac Profile](http://mazassumnida.wtf/api/v2/generate_badge?boj=ansohxxn)](https://solved.ac/ansohxxn/)
+[![Solved.ac Profile](http://mazassumnida.wtf/api/v2/generate_badge?boj=ansohxxn)](https://solved.ac/ansohxxn/)
 
 ## 📌 코드업
 
