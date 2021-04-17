@@ -15,9 +15,7 @@
 
 ## 📌 백준 
 
-- 순위 : 15,106 위
-- 레이팅 : 235 / Silver V
-- 해결한 문제 수 : 38 문제
+![Solved.ac Profile](http://mazassumnida.wtf/api/v2/generate_badge?boj=ansohxxn)](https://solved.ac/ansohxxn/)
 
 ## 📌 코드업
 
