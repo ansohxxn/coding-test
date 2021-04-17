@@ -55,6 +55,10 @@ vector<int> KMP(string pattern, string text) {
 
 int main() {
 	//freopen("input.txt", "r", stdin);
+    ios::sync_with_stdio(false);
+	cin.tie(NULL);
+	cout.tie(NULL);
+    
 	string text;
 	getline(cin, text);
 	string pattern;
