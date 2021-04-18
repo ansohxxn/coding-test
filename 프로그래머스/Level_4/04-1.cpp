@@ -18,7 +18,6 @@ public:
                 now->child[ch - 'a'] = new Trie();
             now = now->child[ch - 'a'];
         }
-        now->count++;
     }
 
     int Search(string str) {
