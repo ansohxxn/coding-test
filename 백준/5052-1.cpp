@@ -28,7 +28,7 @@ int main() {
         bool flag = false;
         for (int j = 0; j < n; ++j) {
             string str = "";
-            for (int k = 0; k < arr[j].length(); ++k) {
+            for (int k = 0; k < arr[j].length() - 1; ++k) {
                 str += arr[j][k];
                 if (hash_set.find(str) != hash_set.end()) {
                     flag = true;
@@ -37,7 +37,7 @@ int main() {
                 }
             }
             if (flag) break;
-            hash_set.insert(str);
+            hash_set.insert(arr[j]);
         }
         if (!flag) cout << "YES" << '\n';
     }

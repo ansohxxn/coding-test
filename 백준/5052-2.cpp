@@ -29,7 +29,7 @@ public :
                 if (now->isEnd) 
                     return true;
             }
-            else if (!now->isEnd) 
+            else 
                 return false;
         }
         return false;
