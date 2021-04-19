@@ -29,8 +29,6 @@ public:
         }
         return count;
     }
-
-public:
 };
 
 int main() {
