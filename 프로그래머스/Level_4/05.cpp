@@ -6,11 +6,9 @@ using namespace std;
 
 class Trie {
 private:
-    int count;
+    int count = 0;
     unordered_map<char, Trie*> child;
 public:
-    Trie() : count(0) {}
-
     void Insert(string str) {
         Trie* now = this;
         for (int i = 0; i < str.length(); ++i) {
