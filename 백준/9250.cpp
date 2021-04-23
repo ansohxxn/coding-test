@@ -4,12 +4,11 @@ using namespace std;
 
 struct Trie {
 public:
-	char alpha;
 	bool isEnd;
 	map<char, Trie*> child;
 	Trie* fail;
 
-	Trie() : alpha(NULL), isEnd(false), fail(nullptr) {}
+	Trie() : isEnd(false), fail(nullptr) {}
 
 	void Insert(string pattern) {
 		Trie* now = this;
@@ -17,7 +16,6 @@ public:
 		for (int i = 0; i < m; ++i) {
 			if (now->child.find(pattern[i]) == now->child.end())
 				now->child[pattern[i]] = new Trie;
-			now->child[pattern[i]]->alpha = pattern[i];
 			now = now->child[pattern[i]];
 
 			if (i == m - 1) now->isEnd = true;
@@ -35,7 +33,6 @@ public:
 			q.pop();
 
 			for (auto& ch : now->child) {
-				if (ch.second == nullptr) continue;
 
 				Trie* next = ch.second;
 				if (now == root)
