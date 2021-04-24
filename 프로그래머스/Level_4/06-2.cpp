@@ -17,7 +17,7 @@ vector<long long> solution(long long k, vector<long long> room_number){
     for (auto num : room_number){
         long long emptyRoom  = GetNextRoom(num);
         answer.push_back(emptyRoom );
-        room[emptyRoom ] = emptyRoom + 1;
+        room[emptyRoom] = emptyRoom + 1;
     }
     return answer;
 }
