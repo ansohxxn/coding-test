@@ -8,10 +8,9 @@ int solution(int n) {
 	int answer = 0;
 	int sum = 0;
 	vector <int> s;
-	for (int i = 0; i < n; i++) {
-		s.push_back(1);
-		s.push_back(-1);
-	}
+	for (int i = 0; i < n; i++) s.push_back(-1);
+	for (int i = 0; i < n; i++) s.push_back(1);
+    
 	do {
 		sum = 0;
 		answer++;
