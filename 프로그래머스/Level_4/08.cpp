@@ -28,7 +28,7 @@ Block BlockPos(Pos pos1, int num) {
     if (num == 1) return { pos1, { pos1.i, pos1.j + 1 }, { pos1.i, pos1.j + 2 }, { pos1.i + 1, pos1.j + 2 } };
     if (num == 2) return { pos1, { pos1.i, pos1.j + 1 }, { pos1.i + 1, pos1.j }, { pos1.i + 2, pos1.j } };
     if (num == 3) return { pos1, { pos1.i + 1, pos1.j }, { pos1.i + 1, pos1.j + 1 }, { pos1.i + 1, pos1.j + 2 } };
-    if (num == 4) return { pos1, { pos1.i + 1, pos1.j }, { pos1.i + 2, pos1.j }, { pos1.i + 2, pos1.j - 1 } };
+    if (num == 4) return { pos1, { pos1.i + 1, pos1.j }, { pos1.i + 2, pos1.j - 1 }, { pos1.i + 2, pos1.j } };
     if (num == 5) return { pos1, { pos1.i, pos1.j + 1 }, { pos1.i, pos1.j + 2 }, { pos1.i + 1, pos1.j } };
     if (num == 6) return { pos1, { pos1.i + 1, pos1.j }, { pos1.i + 2, pos1.j }, { pos1.i + 2, pos1.j + 1 } };
     if (num == 7) return { pos1, { pos1.i + 1, pos1.j - 2 }, { pos1.i + 1, pos1.j - 1 }, { pos1.i + 1, pos1.j } };
