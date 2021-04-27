@@ -4,24 +4,25 @@
 
 using namespace std;
 
-vector<vector<int>> graph;
+vector<vector<int>> graph; 
 unordered_map<int, int> reserve;
 unordered_map<int, int> before;
 vector<bool> visited;
 
 void DFS(int num) {
-    if (visited[num])
-        return;
-
     if (!visited[before[num]]) {
         reserve[before[num]] = num;
         return;
     }
 
     visited[num] = true;
-    DFS(reserve[num]);
-    for (int i = 0; i < graph[num].size(); ++i)
-        DFS(graph[num][i]);  
+    if (reserve[num] > 0)
+        DFS(reserve[num]);
+    for (int i = 0; i < graph[num].size(); ++i){
+        int next = graph[num][i];
+        if (!visited[next])
+            DFS(next);  
+    } 
 }
 
 bool solution(int n, vector<vector<int>> path, vector<vector<int>> order) {
