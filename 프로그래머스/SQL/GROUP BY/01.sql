@@ -12,4 +12,4 @@ ORDER BY ANIMAL_TYPE
 -- WHERE : 집계함수 사용 불가. (전체 테이블 대상)
 -- HAVING : 집계함수 사용 가능 (그룹 대상으로 진행)
 
--- SELECT 열, 집계함수(열)    -> 무조건 GROUP BY 사용해야 함
+-- SELECT 열, 집계함수(열)    -> 무조건 GROUP BY 사용해야 함 
