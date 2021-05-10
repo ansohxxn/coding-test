@@ -2,5 +2,3 @@ SELECT NAME
 FROM ANIMAL_INS
 ORDER BY DATETIME
 LIMIT 1;
-
--- LIKE n : 상위 n 행 (가장 마지막에 붙여줌)
