@@ -1,6 +1,3 @@
 SELECT ANIMAL_TYPE, IFNULL(NAME, 'No name'), SEX_UPON_INTAKE
 FROM ANIMAL_INS
 ORDER BY ANIMAL_ID
-
--- IFNULL (열이름, 값)
-  -- 해당 열의 값이 NULL 이면 값으로 대체한다.
