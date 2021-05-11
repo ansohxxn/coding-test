@@ -3,11 +3,3 @@ FROM ANIMAL_INS A, ANIMAL_OUTS B
 WHERE A.ANIMAL_ID = B.ANIMAL_ID
 ORDER BY DATEDIFF(A.DATETIME, B.DATETIME)
 LIMIT 2
-
-
--- 동등 조인 
-  -- WHERE 에 = 필수
-
--- 날짜 연산
-  -- 더하기 : DATEADD -> (YEAR, 1, '20210428')
-  -- 뺴기 : DATEDIFF -> (B, A) -> B - A
