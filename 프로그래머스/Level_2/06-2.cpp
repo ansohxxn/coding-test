@@ -4,22 +4,21 @@
 
 using namespace std;
 
-struct price_and_second { int price, second; };
 vector<int> solution(vector<int> prices) {
     int n = prices.size();
     vector<int> answer(n);
-    stack<price_and_second> s;
+    stack<int> s;
     
     for(int i = 0; i < n; ++i){
-        while(!s.empty() && prices[i] < s.top().price){
-            answer[s.top().second] = i - s.top().second;
+        while(!s.empty() && prices[i] < prices[s.top()]){
+            answer[s.top()] = i - s.top();
             s.pop();
         }
-        s.push({ prices[i], i });
+        s.push(i);
     }
     
     while(!s.empty()){
-        answer[s.top().second] = n - s.top().second - 1;
+        answer[s.top()] = n - s.top() - 1;
         s.pop();
     }
     
