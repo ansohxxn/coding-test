@@ -12,6 +12,7 @@ void UpdateProfit(string name, int money) {
 
     int notmine = money * 0.1;
     profit[name] += (money - notmine);
+    if (notmine < 1) return;
     UpdateProfit(parent[name], notmine);
 }
 
