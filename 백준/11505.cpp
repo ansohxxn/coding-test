@@ -66,10 +66,8 @@ int main() {
 		long long a, b, c;
 		cin >> a >> b >> c;
 
-		if (a == 1) {
-			arr[b - 1] = c;
+		if (a == 1) 
 			update_segtree(1, 0, N - 1, b - 1, c);
-		}
 		if (a == 2) 
 			cout << search_segtree(1, 0, N - 1, b - 1, c - 1) << '\n';
 	}
