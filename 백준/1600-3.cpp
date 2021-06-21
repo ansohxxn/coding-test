@@ -25,7 +25,8 @@ int main() {
 	vector<vector<vector<bool>>> visited(R, vector<vector<bool>>(C, vector<bool>(K + 1)));
 
 	q.push({ 0, 0, 0, 0 });
-	visited[0][0][0] = true;
+    for (int i = 0; i < K; ++i)
+		visited[0][0][i] = true;
 
 	while (!q.empty()) {
 		Pos now = q.front();
