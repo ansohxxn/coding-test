@@ -42,7 +42,6 @@ void find_max_branch(int now, int totalCost) {
 		if (!visited[next]) {
 			visited[next] = true;
 			find_max_branch(next, totalCost + nextCost);
-			visited[next] = false;
 		}
 	}
 }
@@ -63,8 +62,8 @@ int main() {
 		tree[node1].push_back({ node2, cost });
 		tree[node2].push_back({ node1, cost });
 	}
-
-	visited[R] = true;
+    
+    visited[R] = true;
 	find_pole(R, 0);
 	find_max_branch(giga_node, 0);
 
