@@ -27,7 +27,7 @@ bool is_same_graph(int a, int b) {
 }
 
 int main() {
-	//freopen("input.txt", "r", stdin);
+	freopen("input.txt", "r", stdin);
 	ios_base::sync_with_stdio(0);
 	cin.tie(0); cout.tie(0);
 
@@ -40,14 +40,15 @@ int main() {
 		cin >> cost;
 		edges.push_back({ 0, i, cost });
 	}
-	int board[301][301];
-	for (int i = 1; i <= N; i++)
-		for (int j = 1; j <= N; j++)
-			cin >> board[i][j];
+	for (int i = 1; i <= N; ++i) {
+		for (int j = 1; j <= N; ++j) {
+			int cost;
+			cin >> cost;
 
-	for (int i = 1; i <= N; ++i) 
-		for (int j = i + 1; j <= N; ++j) 
-			edges.push_back({ i, j, board[i][j] });
+			if (i != j) 
+				edges.push_back({ i, j, cost });
+		}
+	}
 
 	sort(edges.begin(), edges.end(), cmp);
 
