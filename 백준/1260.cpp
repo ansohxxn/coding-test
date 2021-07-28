@@ -46,7 +46,7 @@ int main() {
 		graph[v1].push_back(v2);
 		graph[v2].push_back(v1);
 	}
-	for (int i = 0; i < n; ++i)
+	for (int i = 1; i <= n; ++i)
 		sort(graph[i].begin(), graph[i].end());
 
 	vector<bool> checked_dfs(n + 1);
